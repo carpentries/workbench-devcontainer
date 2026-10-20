@@ -1,5 +1,4 @@
-ARG DEVC_IMG=ghcr.io/carpentries/workbench-docker:latest
-FROM ${DEVC_IMG}
+FROM ghcr.io/carpentries/workbench-docker:latest
 
 ##  this could be used to run userland scripts e.g.
 ##  users could add specific dependencies or configurations

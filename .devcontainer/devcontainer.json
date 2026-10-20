@@ -22,10 +22,7 @@
     ],
     "build": {
         "dockerfile": "Dockerfile",
-        "context": "..",
-        "args": {
-          "DEVC_IMG": "${localEnv:DEVC_IMG}"
-        }
+        "context": ".."
     },
     "runArgs": [
         "-p=8787:8787",
@@ -34,6 +31,7 @@
     "postCreateCommand": {
         "pre_echo": "echo 'Installing lesson prerequisites - please wait...'",
         "gpg_reset": "gpgconf --kill all",
+        "handle_renv": "Rscript /home/rstudio/.workbench/fortify_renv_cache.R",
         "startRstudio": "bash /home/rstudio/start.sh"
     },
     "containerEnv": {
