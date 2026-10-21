@@ -11,7 +11,7 @@ echo "Using: ${DEPS_IMG}"
 
 if docker pull "$DEPS_IMG"; then
   # update the Dockerfile FROM
-  sed -i "s|^FROM .*|FROM $DEPS_IMG|" Dockerfile
+  sed -i "s|^FROM .*|FROM $DEPS_IMG|" .devcontainer/Dockerfile
 fi
 
 devcontainer up
